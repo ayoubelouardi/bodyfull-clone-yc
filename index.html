@@ -212,7 +212,7 @@
         
     </section>
 
-        <section style="width: 100%; min-height: 100vh; border: 1px solid black; display: flex; flex-direction: column;">
+    <section style="width: 100%; min-height: 100vh; border: 1px solid black; display: flex; flex-direction: column;">
   
         <div class="flex-1 bg-red-600 border border-black">
             <br>
@@ -251,6 +251,103 @@
             <p class="hidden">c</p>
         </div>
     </section>
+
+        <!-- 🏗️ Text + Button | Fast Sliding 2x2 Grid Section -->
+    <section class="w-full min-h-screen border border-black p-8 flex items-center justify-center">
+        
+        <!-- Outer Container -->
+        <div class="w-full max-w-7xl flex gap-8">
+            
+            <!-- Left Column (Text + Button) -->
+            <div class="flex-1 bg-blue-500 border-2 border-black p-12 flex flex-col justify-center gap-6">
+                
+                <!-- Text Area -->
+                <div class="text-white">
+                    <h2 class="text-4xl font-bold mb-4">Primary Heading</h2>
+                    <p class="text-xl mb-2">This is the main textual content area providing a title, summary, or description for the feature or product.</p>
+                    <p class="text-lg opacity-90">Additional supporting text can go here to provide more context and information.</p>
+                </div>
+                
+                <!-- Button (Call-to-Action) -->
+                <div>
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-8 py-4 rounded-lg border-2 border-black shadow-lg transition-all">
+                        Call to Action
+                    </button>
+                </div>
+                
+            </div>
+
+            <!-- Right Column (Fast Sliding 2x2 Grid) -->
+            <div class="flex-1 bg-gray-200 border-2 border-black p-8 overflow-hidden">
+                
+                <div class="swiper gridSwiper h-full">
+                    
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide 1: 2x2 Grid Set A -->
+                        <div class="swiper-slide">
+                            <div class="grid grid-cols-2 grid-rows-2 gap-4 h-full">
+                                <div class="aspect-square bg-red-500 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">1</span>
+                                </div>
+                                <div class="aspect-square bg-blue-600 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">2</span>
+                                </div>
+                                <div class="aspect-square bg-yellow-400 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-black text-2xl font-bold">3</span>
+                                </div>
+                                <div class="aspect-square bg-green-500 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">4</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: 2x2 Grid Set B -->
+                        <div class="swiper-slide">
+                            <div class="grid grid-cols-2 grid-rows-2 gap-4 h-full">
+                                <div class="aspect-square bg-purple-500 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">5</span>
+                                </div>
+                                <div class="aspect-square bg-orange-500 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">6</span>
+                                </div>
+                                <div class="aspect-square bg-pink-400 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">7</span>
+                                </div>
+                                <div class="aspect-square bg-teal-500 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">8</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: 2x2 Grid Set C -->
+                        <div class="swiper-slide">
+                            <div class="grid grid-cols-2 grid-rows-2 gap-4 h-full">
+                                <div class="aspect-square bg-indigo-600 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">9</span>
+                                </div>
+                                <div class="aspect-square bg-red-400 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">10</span>
+                                </div>
+                                <div class="aspect-square bg-lime-500 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-black text-2xl font-bold">11</span>
+                                </div>
+                                <div class="aspect-square bg-cyan-500 border-2 border-black rounded-2xl flex items-center justify-center">
+                                    <span class="text-white text-2xl font-bold">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+        
+    </section>
+
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -367,6 +464,29 @@
                     });
                 }
             }
+        });
+
+        // Initialize Fast Sliding 2x2 Grid Swiper
+        const gridSwiper = new Swiper(".gridSwiper", {
+            // 1. Core Settings
+            loop: true,                    // Enable infinite looping
+            spaceBetween: 0,               // No gap between slides
+            
+            // 2. Fast Autoplay for Dynamic Display
+            autoplay: {
+                delay: 1500,               // 1.5 second delay (fast sliding)
+                disableOnInteraction: false, // Keep sliding after user interaction
+            },
+            speed: 600,                    // Quick transition speed
+            
+            // 3. Effect
+            effect: 'fade',                // Smooth fade transition between grid sets
+            fadeEffect: {
+                crossFade: true
+            },
+            
+            // 4. Single slide view (one 2x2 grid at a time)
+            slidesPerView: 1,
         });
     </script>
 </body>
