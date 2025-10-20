@@ -1,0 +1,51 @@
+
+
+/* Custom styles */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.square {
+    aspect-ratio: 1 / 1;
+}
+
+/* Video Carousel Custom Pagination */
+.swiper-pagination-custom .swiper-pagination-bullet {
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet-active {
+    background-color: #1f2937 !important; /* Dark gray for active dot */
+    transform: scale(1.3);
+}
+
+/* FAQ Responsive Styles */
+.faq-question {
+    padding: 1rem 1rem;
+}
+
+.faq-answer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .faq-question {
+        padding: 1.5rem 1.5rem;
+    }
+    
+    .faq-answer {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
