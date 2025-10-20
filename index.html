@@ -40,6 +40,27 @@
             background-color: #1f2937 !important; /* Dark gray for active dot */
             transform: scale(1.3);
         }
+
+        /* FAQ Responsive Styles */
+        .faq-question {
+            padding: 1rem 1rem;
+        }
+        
+        .faq-answer {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .faq-question {
+                padding: 1.5rem 1.5rem;
+            }
+            
+            .faq-answer {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -110,16 +131,16 @@
     </section>
 
     <!-- 🏗️ Video Carousel Section -->
-    <section class="w-full min-h-screen border border-red-500 p-8 flex flex-col gap-4">
+    <section class="w-full min-h-screen border border-red-500 p-4 md:p-8 flex flex-col gap-4">
         
         <!-- Header div -->
         <div class="border border-green-500 p-4">
-            <h2 class="text-3xl font-bold text-center">Short Videos</h2>
-            <p class="text-center text-gray-600 mt-2">Explore our collection of vertical video content</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-center">Short Videos</h2>
+            <p class="text-center text-gray-600 mt-2 text-sm md:text-base">Explore our collection of vertical video content</p>
         </div>
 
         <!-- Reel Container (Viewport with overflow hidden) -->
-        <div class="border border-blue-500 overflow-hidden flex-1 relative p-4">
+        <div class="border border-blue-500 overflow-hidden flex-1 relative p-2 md:p-4">
             
             <div class="swiper videoSwiper h-full">
                 
@@ -163,10 +184,10 @@
         </div>
 
         <!-- Navigation div (Dots + Arrows) -->
-        <div class="border border-purple-500 p-4 flex items-center justify-center gap-4">
+        <div class="border border-purple-500 p-3 md:p-4 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
             
             <!-- Previous Arrow -->
-            <button class="swiper-button-prev-custom bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg cursor-pointer">
+            <button class="swiper-button-prev-custom bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg cursor-pointer text-sm md:text-base">
                 ← Prev
             </button>
 
@@ -174,7 +195,7 @@
             <div class="swiper-pagination-custom flex items-center justify-center gap-2"></div>
 
             <!-- Next Arrow -->
-            <button class="swiper-button-next-custom bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg cursor-pointer">
+            <button class="swiper-button-next-custom bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg cursor-pointer text-sm md:text-base">
                 Next →
             </button>
 
@@ -183,29 +204,29 @@
     </section>
 
     <!-- 🏗️ Two-Column Bridge Section -->
-    <section class="w-full min-h-screen border border-black p-8 flex items-center justify-center">
+    <section class="w-full min-h-screen border border-black p-4 md:p-8 flex items-center justify-center">
         
         <!-- Outer Container -->
-        <div class="w-full max-w-7xl relative flex">
+        <div class="w-full max-w-7xl relative flex flex-col md:flex-row gap-4 md:gap-0">
             
             <!-- Left Block (Text) -->
-            <div class="flex-1 bg-blue-500 border-2 border-black p-8 flex items-center justify-center min-h-[500px]">
+            <div class="flex-1 bg-blue-500 border-2 border-black p-6 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
                 <div class="text-center">
-                    <h3 class="text-3xl font-bold text-white mb-4">Text Content Area</h3>
-                    <p class="text-white text-lg">This area contains textual information providing context and details.</p>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4">Text Content Area</h3>
+                    <p class="text-white text-base md:text-lg">This area contains textual information providing context and details.</p>
                 </div>
             </div>
 
             <!-- Right Block (Image) -->
-            <div class="flex-1 bg-yellow-400 border-2 border-black p-8 flex items-center justify-center min-h-[500px]">
+            <div class="flex-1 bg-yellow-400 border-2 border-black p-6 md:p-8 flex items-center justify-center min-h-[300px] md:min-h-[500px]">
                 <div class="w-4/5 h-4/5 bg-green-500 border-2 border-black rounded-3xl flex items-center justify-center">
-                    <p class="text-2xl font-bold text-white">Image Container</p>
+                    <p class="text-xl md:text-2xl font-bold text-white">Image Container</p>
                 </div>
             </div>
 
             <!-- Central Element (Video) - Positioned at the dividing line -->
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-red-600 border-4 border-black rounded-2xl flex items-center justify-center shadow-2xl z-10">
-                <p class="text-white font-bold text-center text-sm">Video<br/>Element</p>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-32 md:h-32 bg-red-600 border-4 border-black rounded-2xl flex items-center justify-center shadow-2xl z-10">
+                <p class="text-white font-bold text-center text-xs md:text-sm">Video<br/>Element</p>
             </div>
 
         </div>
@@ -252,25 +273,25 @@
         </div>
     </section>
 
-        <!-- 🏗️ Text + Button | Fast Sliding 2x2 Grid Section -->
-    <section class="w-full min-h-screen border border-black p-8 flex items-center justify-center">
+    <!-- 🏗️ Text + Button | Fast Sliding 2x2 Grid Section -->
+    <section class="w-full min-h-screen border border-black p-4 md:p-8 flex items-center justify-center">
         
         <!-- Outer Container -->
-        <div class="w-full max-w-7xl flex gap-8">
+        <div class="w-full max-w-7xl flex flex-col lg:flex-row gap-6 md:gap-8">
             
             <!-- Left Column (Text + Button) -->
-            <div class="flex-1 bg-blue-500 border-2 border-black p-12 flex flex-col justify-center gap-6">
+            <div class="flex-1 bg-blue-500 border-2 border-black p-8 md:p-12 flex flex-col justify-center gap-4 md:gap-6">
                 
                 <!-- Text Area -->
                 <div class="text-white">
-                    <h2 class="text-4xl font-bold mb-4">Primary Heading</h2>
-                    <p class="text-xl mb-2">This is the main textual content area providing a title, summary, or description for the feature or product.</p>
-                    <p class="text-lg opacity-90">Additional supporting text can go here to provide more context and information.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3 md:mb-4">Primary Heading</h2>
+                    <p class="text-lg md:text-xl mb-2">This is the main textual content area providing a title, summary, or description for the feature or product.</p>
+                    <p class="text-base md:text-lg opacity-90">Additional supporting text can go here to provide more context and information.</p>
                 </div>
                 
                 <!-- Button (Call-to-Action) -->
                 <div>
-                    <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-8 py-4 rounded-lg border-2 border-black shadow-lg transition-all">
+                    <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-base md:text-lg px-6 py-3 md:px-8 md:py-4 rounded-lg border-2 border-black shadow-lg transition-all">
                         Call to Action
                     </button>
                 </div>
@@ -278,7 +299,7 @@
             </div>
 
             <!-- Right Column (Fast Sliding 2x2 Grid) -->
-            <div class="flex-1 bg-gray-200 border-2 border-black p-8 overflow-hidden">
+            <div class="flex-1 bg-gray-200 border-2 border-black p-6 md:p-8 overflow-hidden min-h-[400px] md:min-h-0">
                 
                 <div class="swiper gridSwiper h-full">
                     
@@ -348,6 +369,238 @@
         
     </section>
 
+    <section class="w-full min-h-screen bg-red-500 flex flex-wrap">
+        <div class="flex-1 min-w-[300px] bg-green-500 border-2 border-black flex items-center justify-center">
+            <p class="hidden">c</p>
+        </div>
+        <div class="flex-1 min-w-[300px] bg-green-500 border-2 border-black flex items-center justify-center">
+            <p class="hidden">c</p>
+        </div>
+    </section>
+
+    <!-- 🏗️ Product Description + Key Ingredients Section -->
+    <section class="w-full min-h-screen border border-black p-4 md:p-8 flex items-center justify-center">
+        
+        <!-- Outer Container -->
+        <div class="w-full max-w-6xl flex flex-col lg:flex-row gap-4 md:gap-6">
+            
+            <!-- Left Column (Key Ingredients/Features) - Wider -->
+            <div class="w-full lg:w-3/5 flex flex-col gap-4 md:gap-6">
+                
+                <!-- Red block for Title and Text -->
+                <div class="bg-red-500 border-2 border-black rounded-2xl p-6 md:p-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4">Key Ingredients</h2>
+                    <p class="text-white text-base md:text-lg">Discover the powerful natural ingredients that make our product effective and safe for daily use.</p>
+                </div>
+
+                <!-- Interactive Tags (scattered blue rectangles) -->
+                <div class="flex flex-wrap gap-2 md:gap-3">
+                    <button class="ingredient-tag bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer" data-ingredient="0">
+                        Vitamin C
+                    </button>
+                    <button class="ingredient-tag bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer" data-ingredient="1">
+                        Hyaluronic Acid
+                    </button>
+                    <button class="ingredient-tag bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer" data-ingredient="2">
+                        Retinol
+                    </button>
+                    <button class="ingredient-tag bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer" data-ingredient="3">
+                        Niacinamide
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        Peptides
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        Aloe Vera
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        Green Tea
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        Collagen
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        Ceramides
+                    </button>
+                    <button class="bg-blue-500 hover:bg-blue-600 border-2 border-black rounded-lg px-3 py-2 md:px-4 md:py-2 text-white text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        Vitamin E
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Right Column (Product Description) - Narrower -->
+            <div class="w-full lg:w-2/5 flex flex-col gap-4 md:gap-6">
+                
+                <!-- Red block for Title and Description -->
+                <div class="bg-red-500 border-2 border-black rounded-2xl p-4 md:p-6">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-2 md:mb-3">Product Description</h2>
+                    <p class="text-white text-sm md:text-lg">Our premium formula combines the finest ingredients to deliver visible results. Experience the difference with scientifically-backed skincare.</p>
+                </div>
+
+                <!-- Ingredient Carousel Container -->
+                <div class="flex-1 relative min-h-[300px] md:min-h-0">
+                    <div class="swiper ingredientSwiper h-full">
+                        <div class="swiper-wrapper">
+                            
+                            <!-- Slide 1: Vitamin C -->
+                            <div class="swiper-slide">
+                                <div class="bg-blue-500 border-4 border-black rounded-full aspect-square w-full mx-auto flex items-center justify-center">
+                                    <div class="text-center">
+                                        <p class="text-white text-4xl font-bold mb-2">🍊</p>
+                                        <p class="text-white text-xl font-semibold">Vitamin C</p>
+                                        <p class="text-white text-base">Brightening</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Hyaluronic Acid -->
+                            <div class="swiper-slide">
+                                <div class="bg-blue-500 border-4 border-black rounded-full aspect-square w-full mx-auto flex items-center justify-center">
+                                    <div class="text-center">
+                                        <p class="text-white text-4xl font-bold mb-2">💧</p>
+                                        <p class="text-white text-xl font-semibold">Hyaluronic Acid</p>
+                                        <p class="text-white text-base">Hydration</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Retinol -->
+                            <div class="swiper-slide">
+                                <div class="bg-blue-500 border-4 border-black rounded-full aspect-square w-full mx-auto flex items-center justify-center">
+                                    <div class="text-center">
+                                        <p class="text-white text-4xl font-bold mb-2">✨</p>
+                                        <p class="text-white text-xl font-semibold">Retinol</p>
+                                        <p class="text-white text-base">Anti-Aging</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Niacinamide -->
+                            <div class="swiper-slide">
+                                <div class="bg-blue-500 border-4 border-black rounded-full aspect-square w-full mx-auto flex items-center justify-center">
+                                    <div class="text-center">
+                                        <p class="text-white text-4xl font-bold mb-2">🌟</p>
+                                        <p class="text-white text-xl font-semibold">Niacinamide</p>
+                                        <p class="text-white text-base">Pore Refining</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yellow row for Navigation (dots and arrows) -->
+                <div class="bg-yellow-400 border-2 border-black rounded-2xl p-3 md:p-4 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
+                    <button class="ingredient-prev bg-black hover:bg-gray-800 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        ← Prev
+                    </button>
+                    <div class="ingredient-pagination flex gap-2"></div>
+                    <button class="ingredient-next bg-black hover:bg-gray-800 text-white px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base font-semibold transition-all cursor-pointer">
+                        Next →
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </section>
+
+    <!-- 🏗️ Image + FAQ Accordion Section -->
+    <section class="w-full min-h-screen border border-black p-4 md:p-8 flex items-center justify-center">
+        
+        <!-- Outer Container -->
+        <div class="w-full max-w-7xl flex flex-col lg:flex-row gap-6">
+            
+            <!-- Left Column (Large Image) -->
+            <div class="w-full lg:w-2/3 bg-gradient-to-br from-purple-600 to-blue-600 border-2 border-black rounded-3xl p-6 md:p-8 flex items-center justify-center min-h-[400px] lg:min-h-[700px]">
+                <div class="text-center">
+                    <p class="text-4xl md:text-6xl font-bold text-white mb-3 md:mb-4">HERO IMAGE</p>
+                    <p class="text-xl md:text-2xl text-white opacity-90">Key Visual Content</p>
+                </div>
+            </div>
+
+            <!-- Right Column (FAQ Accordion) -->
+            <div class="w-full lg:w-1/3 flex flex-col gap-3 md:gap-4 justify-center">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-red-500 border-2 border-black rounded-2xl overflow-hidden">
+                    <button class="w-full p-4 md:p-6 flex items-center justify-between hover:bg-red-600 transition-all cursor-pointer faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-white text-base md:text-lg font-semibold text-left">What is your return policy?</span>
+                        <span class="text-white text-2xl faq-icon ml-2">+</span>
+                    </button>
+                    <div class="faq-answer bg-red-400 border-t-2 border-black px-4 md:px-6 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                        <p class="text-white py-3 md:py-4 text-sm md:text-base">We offer a 30-day money-back guarantee on all products. Simply contact our support team to initiate a return.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-blue-500 border-2 border-black rounded-2xl overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between hover:bg-blue-600 transition-all cursor-pointer faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-white text-lg font-semibold">How long does shipping take?</span>
+                        <span class="text-white text-2xl faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer bg-blue-400 border-t-2 border-black px-6 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                        <p class="text-white py-4">Standard shipping takes 5-7 business days. Express shipping is available for 2-3 business days delivery.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-yellow-400 border-2 border-black rounded-2xl overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between hover:bg-yellow-500 transition-all cursor-pointer faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-black text-lg font-semibold">Do you offer international shipping?</span>
+                        <span class="text-black text-2xl faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer bg-yellow-300 border-t-2 border-black px-6 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                        <p class="text-black py-4">Yes! We ship to over 50 countries worldwide. Shipping costs and delivery times vary by location.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 (Central - FAQ Header) -->
+                <div class="bg-green-600 border-4 border-black rounded-2xl p-8 flex items-center justify-center shadow-xl">
+                    <span class="text-white text-2xl font-bold">FAQ</span>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="bg-purple-500 border-2 border-black rounded-2xl overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between hover:bg-purple-600 transition-all cursor-pointer faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-white text-lg font-semibold">Can I track my order?</span>
+                        <span class="text-white text-2xl faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer bg-purple-400 border-t-2 border-black px-6 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                        <p class="text-white py-4">Yes, you'll receive a tracking number via email once your order ships. You can track your package in real-time.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="bg-orange-500 border-2 border-black rounded-2xl overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between hover:bg-orange-600 transition-all cursor-pointer faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-white text-lg font-semibold">What payment methods do you accept?</span>
+                        <span class="text-white text-2xl faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer bg-orange-400 border-t-2 border-black px-6 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                        <p class="text-white py-4">We accept all major credit cards, PayPal, Apple Pay, and Google Pay for your convenience.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="bg-teal-500 border-2 border-black rounded-2xl overflow-hidden">
+                    <button class="w-full p-6 flex items-center justify-between hover:bg-teal-600 transition-all cursor-pointer faq-question" onclick="toggleFAQ(this)">
+                        <span class="text-white text-lg font-semibold">How do I contact customer support?</span>
+                        <span class="text-white text-2xl faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer bg-teal-400 border-t-2 border-black px-6 overflow-hidden transition-all duration-300" style="max-height: 0;">
+                        <p class="text-white py-4">You can reach our support team via email at support@example.com or through our live chat available 24/7.</p>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+        
+    </section>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -488,6 +741,68 @@
             // 4. Single slide view (one 2x2 grid at a time)
             slidesPerView: 1,
         });
+
+        // Initialize Ingredient Carousel Swiper
+        const ingredientSwiper = new Swiper(".ingredientSwiper", {
+            // 1. Core Settings
+            loop: true,                    // Enable infinite looping
+            spaceBetween: 0,               // No gap between slides
+            
+            // 2. Autoplay
+            autoplay: {
+                delay: 4000,               // 4 second delay between transitions
+                disableOnInteraction: false,
+            },
+            speed: 600,                    // Smooth transition
+            
+            // 3. Navigation - Custom arrows
+            navigation: {
+                nextEl: '.ingredient-next',
+                prevEl: '.ingredient-prev',
+            },
+            
+            // 4. Pagination - Custom dots
+            pagination: {
+                el: '.ingredient-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + ' w-3 h-3 rounded-full bg-gray-600 inline-block cursor-pointer hover:bg-black transition-all"></span>';
+                },
+            },
+            
+            // 5. Single slide view
+            slidesPerView: 1,
+        });
+
+        // Make ingredient tags interactive - click to go to corresponding slide
+        const ingredientTags = document.querySelectorAll('.ingredient-tag');
+
+        ingredientTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-ingredient'));
+                ingredientSwiper.slideToLoop(slideIndex);
+            });
+        });
+
+        // FAQ Accordion Toggle Function
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('.faq-icon');
+            
+            // Check if currently open
+            const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+            
+            if (isOpen) {
+                // Close the answer
+                answer.style.maxHeight = '0';
+                icon.textContent = '+';
+            } else {
+                // Open the answer
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.textContent = '−';
+            }
+        }
     </script>
 </body>
 </html>
